@@ -1,0 +1,242 @@
+.taux-container {
+    width: 100%;
+    background-color: #fdfffc;
+    border-radius: 40px 40px 0 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.filters-container {
+    border-radius: 40px 40px 0 0;
+    padding: 35px;
+}
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+.filter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+select {
+    padding: 10px;
+    font-size: 1.1em;
+    color: gray;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    width: 100%;
+    text-align: start;
+    cursor: pointer;
+    transition:  all 0.5s ease-in-out;
+}
+select:hover {
+    border: 2px solid #333;
+}
+.swap {
+    border: none;
+    background-color: #ffff;
+    font-size: 25px;
+    color: #333;
+    cursor: pointer;
+}
+.filter-taux {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+.filter2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.filter2 span {
+    text-align: start;
+    margin-bottom: 5px;
+    color:  grey;
+    font-size: 15px;
+}
+.rate-wrapper {
+    width: 100%;
+    text-align: start;
+    /* line-height: 3px; */
+}
+.rate-wrapper h3 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 550;
+}
+.rate-wrapper span {
+    font-size: 13px;
+}
+.input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    transition: all 0.5s ease-in-out ; 
+}
+.input-wrapper:hover {
+    border: 2px solid #201010;
+}
+input {
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    resize: none;
+    outline: none;
+}
+.refresh {
+    background-color: #028a0f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 30px 0 0;
+}
+.refresh:hover {
+    background-color: #02710d;
+}
+.refresh:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0 10px;
+}
+thead {
+    background-color: rgba(34, 55, 19, 0.9);
+}
+th {
+    border-bottom: 1px solid #eeeeee;
+    height: 120px;
+    text-align: center;
+    color: white;
+}
+th span {
+    font-size: 12px;
+}
+th:first-child {
+    border-radius: 30px 0 0;
+}
+th:last-child {
+    border-radius: 0  30px 0 0;
+}
+td {
+    border-bottom: 1px solid #e5e5e5;
+    color: gray;
+    font-size: 15px;
+    height: 80px;
+}
+td:first-child {
+    width: 25%;
+    text-align: start;
+}
+td:last-child {
+    color: #333;
+    font-size: 20px;
+}
+.platform-icon {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.platform-link {
+    text-decoration: none;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/*-- Responsives ---*/
+@media screen and (max-width: 800px) {
+    .swap {
+        font-size: 20px;
+    }
+    td {
+        height: 70px;
+    }
+    .platform-icon {
+        height: 80%;
+    }
+}
+
+/* Mode mobile : en dessous de 770px */
+@media screen and (max-width: 770px) {
+
+    
+    .filters {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .filter-taux {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .swap {
+        font-size: 30px;
+        color: #000000;
+        font-weight: bold;
+    }
+    .rate-wrapper {
+        text-align: center;
+    }
+
+    /* Désactiver le tableau */
+    table {
+        display: none;
+    }
+
+  /* Affichage en cartes */
+    .carte {
+        width: 100%;
+        background-color: rgb(246, 249, 246);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        border-radius: 35px 35px 0 0;
+    }
+    .rate-card {
+        border-bottom: 1px solid #bcbcbc;
+        margin: 0 30px;
+        padding: 30px 0;
+    }
+    .provider {
+        text-align: start;
+    }
+    .platform-icon {
+        width: 25%;
+        height: auto;
+    }
+    .cta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: rgb(118, 118, 118);
+        padding: 5px;
+    }
+    .received span:last-child {
+        color: #333;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .received span:last-child {
+        color: #333;
+        font-size: 15px;
+    }
+}

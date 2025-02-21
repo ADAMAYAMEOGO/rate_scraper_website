@@ -18,14 +18,16 @@ export default {
 <style scoped>
 #app {
   width: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
   justify-content: center;
   text-align: center;
+  margin: auto;
+  padding: 30px;
 }
 #app h1 {
-  margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
 }

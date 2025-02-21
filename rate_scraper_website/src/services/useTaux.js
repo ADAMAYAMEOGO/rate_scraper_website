@@ -1,3 +1,4 @@
+
 import { ref, onMounted, computed, watch } from 'vue';
 
 const API_URL = "http://localhost:3000/api/taux";
@@ -9,7 +10,20 @@ const deviseIcons = {
   GBP: "🇬🇧",
   XOF: "🇧🇫",
   XAF: "🇨🇲"
+}
+
+// icones et liens des plateformes
+const platformIcons = {
+  "TaptapSend": {
+      icon: "/Pasted Graphic.png" , 
+      link: "https://www.taptapsend.com/"
+  },
+  "TransfertChapChap": {
+      icon: "/Transfert ChapChap.png", 
+      link: "https://transfertchapchap.com/"
+  }
 };
+
 
 const fromCurrency = ref("EUR");
 const toCurrency = ref("GBP");
@@ -18,6 +32,7 @@ const taux = ref([]);
 const loading = ref(false);
 const error = ref(null);
 const devises = Object.keys(deviseIcons);
+const swapped = ref(false);
 
 const fetchTaux = async () => {
   loading.value = true;
@@ -45,7 +60,14 @@ const calculateReceivedAmount = computed(() => {
   };
 });
 
-// Rafraîchir automatiquement les taux lorsqu'une des valeurs change
+const swapDevise = () => {
+  const temp = fromCurrency.value;
+  fromCurrency.value = toCurrency.value;
+  toCurrency.value = temp;
+  swapped.value = !swapped.value;
+  fetchTaux();
+};
+
 watch([fromCurrency, toCurrency, amount], fetchTaux, { immediate: true });
 
 onMounted(fetchTaux);
@@ -61,4 +83,6 @@ export {
   fetchTaux,
   calculateReceivedAmount,
   deviseIcons,
+  platformIcons,
+  swapDevise
 };
